@@ -2,3 +2,5 @@
 node_modules
 sourcemaps 
 data 
+
+gcp-key.json
