@@ -1,5 +1,5 @@
 {
-  "name": "sdk-dashboard",
+  "name": "ib-dragnet-client",
   "private": true,
   "version": "0.1.0",
   "type": "module",

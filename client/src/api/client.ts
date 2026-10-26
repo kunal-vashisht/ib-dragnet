@@ -17,5 +17,4 @@ const real = {
   event: (id: string) => get<SdkEvent>(`/api/events/${encodeURIComponent(id)}`),
 };
 
-// Set VITE_USE_MOCK=true in .env to run without the backend.
-export const api = /**import.meta.env.VITE_USE_MOCK === 'true' ? mock.api :*/ real;
+export const api = real;

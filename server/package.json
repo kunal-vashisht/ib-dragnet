@@ -1,11 +1,11 @@
 {
-  "name": "sdkserver",
+  "name": "ib-dragnet-server",
   "version": "1.0.0-rc.1",
-  "description": "",
+  "description": "SDK event ingestion and dashboard API with Google Cloud Storage-backed event and source-map handling.",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch server.js",
     "start": "node server.js"
   },
   "keywords": [],
