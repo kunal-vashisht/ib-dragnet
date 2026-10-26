@@ -56,7 +56,7 @@ export function syncEventsFromBucket() {
   syncing = (async () => {
     try {
       const bucket = storage.bucket(BUCKET_NAME);
-      const [files] = await bucket.getFiles({ prefix: 'events/' });
+      const [files] = await bucket.getFiles({ prefix: 'trade_web_logs/events/' });
 
       for (const file of files) {
         if (!file.name.endsWith('.json')) continue;

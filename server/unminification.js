@@ -13,7 +13,7 @@ const storage = new Storage({
 });
 
 
-const MAP_PREFIX = 'tradeweb/';
+const MAP_PREFIX = 'trade_web_logs/maps';
 const INDEX_REFRESH_MS = 60 * 1000; // re-list the bucket at most once a minute
 
 let mapIndex = new Map(); 

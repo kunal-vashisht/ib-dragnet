@@ -9,7 +9,7 @@ const storage = new Storage({
   keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS || path.join(__dirname, '..', 'gcp-key.json')
 });
 
-const BUCKET_NAME = process.env.GCP_BUCKET_NAME || ' pib-web-uat-config';
+const BUCKET_NAME = process.env.GCP_BUCKET_NAME || 'pib-web-uat-config';
 
 export async function signURL(req, res) {
   try {
@@ -20,7 +20,7 @@ export async function signURL(req, res) {
       /^[A-Za-z0-9._-]{1,64}$/.test(String(value ?? '')) ? String(value) : fallback;
 
     const unique = crypto.randomBytes(4).toString('hex'); // two uploads in the same millisecond can't overwrite each other
-    const filename = `events/${clean(release, 'unknown')}-${Date.now()}-${clean(clientId, 'anonymous')}-${unique}.json`;
+    const filename = `trade_web_logs/events/${clean(release, 'unknown')}-${Date.now()}-${clean(clientId, 'anonymous')}-${unique}.json`;
 
     const file = storage.bucket(BUCKET_NAME).file(filename);
 
@@ -31,6 +31,7 @@ export async function signURL(req, res) {
       contentType: 'application/json',
     });
 
+    console.log(`status: ok; responding with ${uploadUrl}`)
     res.json({ uploadUrl, filename });
   } catch (error) {
     console.error('Failed to generate signed URL:', error);
