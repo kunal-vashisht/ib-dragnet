@@ -1,0 +1,36 @@
+{
+  "name": "ib-dragnet",
+  "version": "1.0.0",
+  "description": "SDK error monitoring dashboard and ingestion API for collecting, grouping, and inspecting client-side events with source-mapped stack traces, backed by Google Cloud Storage.",
+  "keywords": [
+    "sdk",
+    "error-monitoring",
+    "source-maps",
+    "stack-traces",
+    "google-cloud-storage"
+  ],
+  "homepage": "https://github.com/kunal-vashisht/sdk-server#readme",
+  "bugs": {
+    "url": "https://github.com/kunal-vashisht/sdk-server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunal-vashisht/sdk-server.git"
+  },
+  "license": "MIT",
+  "author": "Kunal Vashisht",
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev --workspace=ib-dragnet-client",
+    "dev:server": "npm run dev --workspace=ib-dragnet-server",
+    "build": "npm run build --workspace=ib-dragnet-client",
+    "typecheck": "npm run typecheck --workspace=ib-dragnet-client",
+    "preview:client": "npm run preview --workspace=ib-dragnet-client",
+    "start:server": "npm run start --workspace=ib-dragnet-server",
+    "start": "npm run build && npm run start:server"
+  }
+}

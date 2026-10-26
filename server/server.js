@@ -17,7 +17,7 @@ const quiet = /^\/api\/(issues|events)/;
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '..', 'dashboard', 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 app.use((req, res, next) => {
   if (!(req.method === 'GET' && quiet.test(req.url))) {
     console.log(`${req.method} ${req.url}`);
