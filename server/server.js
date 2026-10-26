@@ -11,7 +11,7 @@ dotenv.config({ path: `.env.${ENV}` });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const quiet = /^\/api\/(issues|events)/;
 
@@ -29,8 +29,6 @@ app.use((req, res, next) => {
 app.get('/health', (_, res) => {
   res.json({
     status: 'ok',
-    env: ENV,
-    timestamp: new Date().toISOString()
   });
 });
 

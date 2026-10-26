@@ -6,7 +6,7 @@ import crypto from 'node:crypto';
 const __dirname = path.dirname(fileURLToPath(import.meta.url)); 
 
 const storage = new Storage({
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS || path.join(__dirname, '..', 'gcp-key.json')
+  credentials: JSON.parse(process.env.GCS_KEY_JSON)
 });
 
 const BUCKET_NAME = process.env.GCP_BUCKET_NAME || 'pib-web-uat-config';
